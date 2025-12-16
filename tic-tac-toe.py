@@ -5,6 +5,7 @@ matrix = [
     [" ", " ", " "]
 ]
 
+# Functions
 def result(player: str) -> None:
 
     print(f"\n\n\tResult: {player} Wins\n\n\t\t{matrix[0]}\n\t\t{matrix[1]}\n\t\t{matrix[2]}")
@@ -12,14 +13,10 @@ def result(player: str) -> None:
 
 def check_all_matrix() -> bool:
 
-    for i in range (1, 3):
-        for j in range (1, 3):
-            if matrix[i][j] == " ":
-                return False
-            else:
-                continue
-
-    return True
+    if " " in matrix:
+        return False
+    else:
+        return True
 
 def check_vertical() -> bool:
 
@@ -100,4 +97,6 @@ def menu() -> None:
 
     print(f"\n\n\tResult: Draw\n\n\t\t{matrix[0]}\n\t\t{matrix[1]}\n\t\t{matrix[2]}")
 
+
+# Main
 menu()
